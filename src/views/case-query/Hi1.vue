@@ -34,13 +34,13 @@
         </el-col>
       </el-header>
       <el-container>
-        <el-aside width="670px">
-          <el-card>
+        <el-aside width="660px">
+          <el-card style="padding-left:5px">
             <div slot="header" style="heigth:100px;margin-bottom:20px">
               <span style="float:left;"><i class="el-icon-document-copy"></i>案件列表</span>
               <el-button round style="float: right; padding: 5px 5px" icon="el-icon-search">根据案号模糊查询</el-button>
             </div>
-            <el-tabs type="border-card">
+            <el-tabs type="border-card" >
               <el-tab-pane label="本日">
                 <el-table
                   ref="filterTable"
@@ -51,24 +51,24 @@
                     prop="caseNumber"
                     label="案号"
                     sortable
-                    width="140"
+                    width="137"
                     column-key="date"
                   >
                   </el-table-column>
                   <el-table-column
                     prop="partyNumber"
                     label="当事人数"
-                    width="80">
+                    width="78">
                   </el-table-column>
                   <el-table-column
                     prop="caseAction"
                     label="案由"
-                    width="100">
+                    width="98">
                   </el-table-column>
                   <el-table-column
                     prop="court"
                     label="法庭"
-                    width="100"
+                    width="95"
                   >
                   </el-table-column>
                   <el-table-column
@@ -82,7 +82,7 @@
                   <el-table-column
                     prop="deliveryState"
                     label="派送状态"
-                    width="100"
+                    width="95"
                     :filters="[{ text: '已派送', value: '已派送' }, { text: '待派送', value: '待派送' }]"
                     :filter-method="filterTag"
                     filter-placement="bottom-end">
@@ -622,6 +622,10 @@ export default {
     /*text-align: center;*/
     /*line-height: 160px;*/
   }
+  /deep/ .el-card__body {
+     padding-left:5px;
+    padding-right:5px;
+   }
 
   /*body > .el-container {*/
     /*!*margin-bottom: 40px;*!*/
